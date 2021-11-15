@@ -15,8 +15,8 @@
 <div>
 	<h3>Website presentation</h3>
   	<ul>
-		<li>https://www.youtube.com/watch?v=EufEpP4r230&ab_channel=IdrissJairi</li>
-		<li>Admin Login Page: http://localhost/RestaurantWebsite/admin/</li>
+		<li>Admin Login Page: http://localhost/ASM-SE/admin/</li>
+		<li>Clerk Login Page: http://localhost/ASM-SE/clerk/</li>
 	</ul>
 	<p>
 		Username: jairi
@@ -35,4 +35,4 @@
 		<li>Feel free to edit the missig parts or the existing parts</li>
 	</ol>
 </div>
-<p>Questions and Clarifications: If you have any questions feel free to contact me: https://www.facebook.com/jairiidriss/</p>
+<p>Questions and Clarifications: If you have any questions feel free to contact me: <a href="https://www.facebook.com/profile.php?id=100009783038550">Facebook</p>
