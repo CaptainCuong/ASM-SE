@@ -2,7 +2,7 @@
 	session_start();
 	$pageTitle = 'Admin Login';
 
-	if(isset($_SESSION['username_restaurant_qRewacvAqzA']) && isset($_SESSION['password_restaurant_qRewacvAqzA']))
+	if(isset($_SESSION['username_restaurant_adminpageADSFADSLGKJ']) && isset($_SESSION['password_restaurant_adminpageADSFADSLGKJ']))
 	{
 		header('Location: dashboard.php');
 	}
@@ -45,9 +45,9 @@
 										if($count > 0)
 										{
 
-											$_SESSION['username_restaurant_qRewacvAqzA'] = $username;
-												$_SESSION['password_restaurant_qRewacvAqzA'] = $password;
-												$_SESSION['userid_restaurant_qRewacvAqzA'] = $row['user_id'];
+											$_SESSION['username_restaurant_adminpageADSFADSLGKJ'] = $username;
+												$_SESSION['password_restaurant_adminpageADSFADSLGKJ'] = $password;
+												$_SESSION['userid_restaurant_adminpageADSFADSLGKJ'] = $row['user_id'];
 												header('Location: dashboard.php');
 												die();
 										}
