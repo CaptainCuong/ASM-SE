@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `messages` (
   `msg_id` int(11) NOT NULL,
-  `incoming_msg_id` int(255) NOT NULL,
-  `outgoing_msg_id` int(255) NOT NULL,
+  `incoming_msg_id` varchar(20) NOT NULL,
+  `outgoing_msg_id` varchar(20) NOT NULL,
   `msg` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
