@@ -23,7 +23,7 @@
         // ($row['status'] == "Offline now") ? $offline = "offline" : $offline = "";
 
         // Khong the hien chinh minh, ko can thiet do query khong co minh
-        // ($outgoing_id == $row['username']) ? $hid_me = "hide" : $hid_me = "";
+        ($outgoing_id == $row['username']) ? $hid_me = "hide" : $hid_me = "";
 
         $output .= '<a href="chatapp/chat.php?user_id='. $row['username'] .'">
                     <div class="content">

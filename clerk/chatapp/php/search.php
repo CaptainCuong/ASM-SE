@@ -5,7 +5,7 @@
     $outgoing_id = $_SESSION['username_restaurant_qRewacvAqzA'];
     $searchTerm = mysqli_real_escape_string($conn, $_POST['searchTerm']);
 
-    $sql = "SELECT * FROM users WHERE NOT usename = '{$outgoing_id}' AND (full_name LIKE '%{$searchTerm}%') ";
+    $sql = "SELECT * FROM users WHERE NOT username = '{$outgoing_id}' AND (full_name LIKE '%{$searchTerm}%')";
     $output = "";
     $query = mysqli_query($conn, $sql);
     if(mysqli_num_rows($query) > 0){
