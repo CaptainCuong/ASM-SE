@@ -1,10 +1,10 @@
 <?php
-	
-	//Start session
+    
+    //Start session
     session_start();
 
     //Set page title
-    $pageTitle = 'Clerk Interface';
+    $pageTitle = 'Dashboard';
 
     //PHP INCLUDES
     include 'connect.php';
@@ -15,9 +15,9 @@
 
     if(isset($_SESSION['username_restaurant_qRewacvAqzA']) && isset($_SESSION['password_restaurant_qRewacvAqzA']))
     {
-    	include 'Includes/templates/navbar.php';
+        include 'Includes/templates/navbar.php';
 
-    	?>
+        ?>
 
             <script type="text/javascript">
 
@@ -38,9 +38,6 @@
             <!-- TOP 4 CARDS -->
 
             <div class="row">
-
-                <!-- 1st CARDS -->
-
                 <div class="col-sm-6 col-lg-3">
                     <div class="panel panel-green ">
                         <div class="panel-heading">
@@ -54,18 +51,15 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <a href="clients.php">
+                        <a href="clients.php">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
-                        </a> -->
+                        </a>
                     </div>
                 </div>
-
-                <!-- 2nd CARDS -->
-
                 <div class="col-sm-6 col-lg-3">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -89,8 +83,6 @@
                     </div>
                 </div>
                 
-                <!-- 3rd CARDS -->
-
                 <div class=" col-sm-6 col-lg-3">
                     <div class="panel panel-red">
                         <div class="panel-heading">
@@ -113,9 +105,6 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- 4th CARDS -->
-
                 <div class=" col-sm-6 col-lg-3">
                     <div class="panel panel-yellow">
                         <div class="panel-heading">
@@ -129,7 +118,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="orders.php">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -138,7 +127,6 @@
                         </a>
                     </div>
                 </div>
-                <!-- END 4CARDS -->
             </div>
 
             <!-- START ORDERS TABS -->
@@ -211,13 +199,11 @@
                                         foreach($placed_orders as $order)
                                         {
                                             echo "<tr>";
-                                                
                                                 echo "<td>";
                                                     echo $order['order_time'];
                                                 echo "</td>";
-
-                                                
-                                                echo "<td>";    
+                                                echo "<td>";
+                                                    
                                                     $stmtMenus = $con->prepare("SELECT menu_name, quantity, menu_price
                                                             from menus m, in_order in_o
                                                             where m.menu_id = in_o.menu_id
@@ -233,14 +219,11 @@
 
                                                         $total_price += ($menu['menu_price']*$menu['quantity']);
                                                     }
-                                                echo "</td>";
-                                                
 
+                                                echo "</td>";
                                                 echo "<td>";
                                                     echo $total_price."$";
                                                 echo "</td>";
-
-
                                                 echo "<td>";
                                                     ?>
                                                         <button class="btn btn-info btn-sm rounded-0" type="button" data-toggle="modal" data-target="#<?php echo "client_".$order['client_id']; ?>" data-placement="top">
@@ -270,33 +253,33 @@
                                                         </div>
                                                     <?php
                                                 echo "</td>";
-
                                                 
-                                                echo "<td>";                                                    
+                                                echo "<td>";
+                                                    
                                                     $cancel_data = "cancel_order".$order["order_id"];
                                                     $deliver_data = "deliver_order".$order["order_id"];
                                                     ?>
                                                     <ul class="list-inline m-0">
 
-                                                        <!-- Accept Order BUTTON -->
+                                                        <!-- Deliver Order BUTTON -->
                                                         
-                                                        <li class="list-inline-item" data-toggle="tooltip" title="Send to Chief">
+                                                        <li class="list-inline-item" data-toggle="tooltip" title="Deliver Order">
                                                             <button class="btn btn-info btn-sm rounded-0" type="button" data-toggle="modal" data-target="#<?php echo $deliver_data; ?>" data-placement="top">
-                                                                <i class="fas fa-check"></i>
+                                                                <i class="fas fa-truck"></i>
                                                             </button>
 
-                                                            <!-- ACCEPT MODAL -->
+                                                            <!-- DELIVER MODAL -->
                                                             <div class="modal fade" id="<?php echo $deliver_data; ?>" tabindex="-1" role="dialog" aria-labelledby="<?php echo $deliver_data; ?>" aria-hidden="true">
                                                                 <div class="modal-dialog" role="document">
                                                                     <div class="modal-content">
                                                                         <div class="modal-header">
-                                                                            <h5 class="modal-title">Accept Order</h5>
+                                                                            <h5 class="modal-title">Deliver Order</h5>
                                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                                 <span aria-hidden="true">&times;</span>
                                                                             </button>
                                                                         </div>
                                                                         <div class="modal-body">
-                                                                            Mark order as accepteded?
+                                                                            Mark order as delivered?
                                                                         </div>
                                                                         <div class="modal-footer">
                                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -307,13 +290,14 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+
                                                         </li>
 
                                                         <!-- CANCEL BUTTON -->
 
                                                         <li class="list-inline-item" data-toggle="tooltip" title="Cancel Order">
                                                             <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="modal" data-target="#<?php echo $cancel_data; ?>" data-placement="top">
-                                                                <i class="fa fa-close"></i>
+                                                                <i class="fas fa-calendar-times"></i>
                                                             </button>
 
                                                             <!-- CANCEL MODAL -->
@@ -341,6 +325,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+
                                                         </li>
                                                     </ul>
                                                     <?php
@@ -505,56 +490,20 @@
 
             <!-- END ORDERS TABS -->
 
-            <!-- CHAT PANEL -->
-
-            <div class="wrapper">
-                <section class="users">
-                    <header>
-                        <div class="content">
-                            <?php 
-                                $stmt = $con->prepare("SELECT * FROM users WHERE username = '{$_SESSION['username_restaurant_qRewacvAqzA']}'");
-                                $stmt->execute();
-                                $count = $stmt->rowCount();
-                                if($count > 0){
-                                    $row = $stmt->fetchAll();
-                                }
-                            ?>
-                                
-                            <!-- <img src="php/images/<?php echo $row['img']; ?>" alt=""> -->
-                            <div class="details">
-                                <span><?php echo $row[0]['username']; ?></span>
-                                <p><?php echo $row[0]['role']; ?></p>
-                            </div>
-                        </div>
-                    </header>
-                            <div class="search">
-                                <span class="text">Select an user to start chat</span>
-                                <input type="text" placeholder="Enter name to search...">
-                                <button><i class="fas fa-search"></i></button>
-                            </div>
-                    <div class="users-list">
-          
-                    </div>
-                </section>
-            </div>
-
-            <!-- END CHAT PANEL -->
-
         <?php
 
-    	include 'Includes/templates/footer.php';
+        include 'Includes/templates/footer.php';
 
     }
     else
     {
-    	header("Location: index.php");
-    	exit();
+        header("Location: index.php");
+        exit();
     }
 
 ?>
 
 <!-- JS SCRIPTS -->
-<script src="chatapp/javascript/users.js"></script>
 
 <script type="text/javascript">
     

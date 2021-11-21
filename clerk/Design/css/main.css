@@ -2,7 +2,7 @@
 
 a, a:hover 
 {
-	text-decoration: none !important;
+    text-decoration: none !important;
 }
 
 ul 
@@ -22,7 +22,7 @@ ul
 
 html
 {
-	scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 /*** END HTML PAGE STYLE ****/
@@ -463,7 +463,7 @@ body
 .tab button 
 {
     background: inherit;
-    color: black; 
+    color: #ffffff9c;
     float: left;
     border: none;
     outline: none;
@@ -478,14 +478,14 @@ body
 
 .tab button:hover 
 {
-    color: red;
+    color: #fff;
 }
 
 /* Create an active/current tablink class */
 
 .tab button.active 
 {
-    color: #000; 
+    color: #fff;
     border-bottom: 4px solid #ffd943;
 }
 

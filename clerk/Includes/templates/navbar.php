@@ -79,7 +79,7 @@
 
     <!-- VERTICAL NAVBAR -->
 
-    <!-- <aside class="vertical-menu" id="vertical-menu">
+    <aside class="vertical-menu" id="vertical-menu">
         <div>
             <ul class="menu-bar">
                 <div class="sidenav-menu-heading">
@@ -148,7 +148,7 @@
 
             </ul>
         </div>
-    </aside> -->
+    </aside>
 
     <!-- START BODY CONTENT  -->
 
