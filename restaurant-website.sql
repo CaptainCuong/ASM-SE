@@ -25,6 +25,17 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `msg_id` int(11) NOT NULL,
+  `incoming_msg_id` int(255) NOT NULL,
+  `outgoing_msg_id` int(255) NOT NULL,
+  `msg` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
 -- Structure de la table `clients`
 --
 
@@ -232,15 +243,22 @@ CREATE TABLE `users` (
   `username` varchar(20) NOT NULL,
   `email` varchar(30) NOT NULL,
   `full_name` varchar(50) NOT NULL,
-  `password` varchar(100) NOT NULL
+  `password` varchar(100) NOT NULL,
+  `role` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`user_id`, `username`, `email`, `full_name`, `password`) VALUES
-(1, 'jairi', 'test_test@gmail.com', 'Idriss Jairi', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441');
+INSERT INTO `users` (`user_id`, `username`, `email`, `full_name`, `password`, `role`) VALUES
+(1, 'jairi', 'test_test1@gmail.com', 'Idriss Jairi', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'admin'),
+(2, 'caocuong', 'test_test2@gmail.com', 'Idriss Jairi', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'clerk'),
+(3, 'chanhung', 'test_test3@gmail.com', 'Idriss Jairi', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'clerk'),
+(4, 'minhvu', 'test_test4@gmail.com', 'Idriss Jairi', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'clerk'),
+(5, 'manhhung', 'test_test5@gmail.com', 'Idriss Jairi', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'clerk'),
+(6, 'tanphuoc', 'test_test6@gmail.com', 'Idriss Jairi', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'clerk');
+
 
 -- --------------------------------------------------------
 
@@ -421,8 +439,22 @@ ALTER TABLE `menus`
 --
 ALTER TABLE `placed_orders`
   ADD CONSTRAINT `fk_client` FOREIGN KEY (`client_id`) REFERENCES `clients` (`client_id`);
+
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`msg_id`);
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+

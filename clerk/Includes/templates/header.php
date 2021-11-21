@@ -41,6 +41,9 @@
 		<link rel="stylesheet" type="text/css" href="css/util.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 	<!--===============================================================================================-->
+
+		<!-- Chat panel -->
+		<link rel="stylesheet" href="chatapp/style.css">
 	</head>
 
 	<!-- BODY -->

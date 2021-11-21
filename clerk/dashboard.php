@@ -54,13 +54,13 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="clients.php">
+                        <!-- <a href="clients.php">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
-                        </a>
+                        </a> -->
                     </div>
                 </div>
 
@@ -505,6 +505,41 @@
 
             <!-- END ORDERS TABS -->
 
+            <!-- CHAT PANEL -->
+
+            <div class="wrapper">
+                <section class="users">
+                    <header>
+                        <div class="content">
+                            <?php 
+                                $stmt = $con->prepare("SELECT * FROM users WHERE username = '{$_SESSION['username_restaurant_qRewacvAqzA']}'");
+                                $stmt->execute();
+                                $count = $stmt->rowCount();
+                                if($count > 0){
+                                    $row = $stmt->fetchAll();
+                                }
+                            ?>
+                                
+                            <!-- <img src="php/images/<?php echo $row['img']; ?>" alt=""> -->
+                            <div class="details">
+                                <span><?php echo $row[0]['username']; ?></span>
+                                <p><?php echo $row[0]['role']; ?></p>
+                            </div>
+                        </div>
+                    </header>
+                            <div class="search">
+                                <span class="text">Select an user to start chat</span>
+                                <input type="text" placeholder="Enter name to search...">
+                                <button><i class="fas fa-search"></i></button>
+                            </div>
+                    <div class="users-list">
+          
+                    </div>
+                </section>
+            </div>
+
+            <!-- END CHAT PANEL -->
+
         <?php
 
     	include 'Includes/templates/footer.php';
@@ -519,6 +554,7 @@
 ?>
 
 <!-- JS SCRIPTS -->
+<script src="chatapp/javascript/users.js"></script>
 
 <script type="text/javascript">
     
