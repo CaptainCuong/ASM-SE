@@ -138,9 +138,11 @@
                 <!-- TABS BUTTONS -->
 
                 <div class="card-header tab" style="padding:0px;">
+                    <!--
                     <button class="tablinks_orders active" onclick="openTab(event, 'preorders','tabcontent_orders','tablinks_orders')">Confirm order</button>
                     <button class="tablinks_orders" onclick="openTab(event, 'recent_orders','tabcontent_orders','tablinks_orders')">Confirm payment</button>
-                    <button class="tablinks_orders" onclick="openTab(event, 'completed_orders','tabcontent_orders','tablinks_orders')">Paid Orders</button>
+                    -->
+                    <button class="tablinks_orders active" onclick="openTab(event, 'completed_orders','tabcontent_orders','tablinks_orders')">Paid Orders</button>
                 </div>
 
                 <!-- TABS CONTENT -->
