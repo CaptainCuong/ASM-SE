@@ -50,12 +50,10 @@ CREATE TABLE `placed_orders` (
   `order_time` datetime NOT NULL,
   `table_id` int(5) NOT NULL,
   `user_id` int(5),
-  `delivery_address` varchar(255) NOT NULL,
-  `delivered` tinyint(1) NOT NULL DEFAULT '0',
-  `canceled` tinyint(1) NOT NULL DEFAULT '0',
-  `cancellation_reason` varchar(255) DEFAULT NULL,
   `payment_method` varchar(50) NOT NULL,
-  `paid` tinyint(1) NOT NULL DEFAULT '0'
+  `paid` tinyint(1) NOT NULL DEFAULT '0',
+  `confirmed` tinyint(1) NOT NULL DEFAULT '0',
+  `total` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -108,9 +106,6 @@ CREATE TABLE `users` (
   `password` varchar(100) NOT NULL,
   `role` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-INSERT INTO `users` (`user_id`, `username`, `email`, `full_name`, `password`) VALUES
-(1, 'jairi', 'test_test@gmail.com', 'Idriss Jairi', 'f7c3bc1d808e04732adf679965ccc34ca7ae3441');
 
 CREATE TABLE `messages` (
   `msg_id` int(3) NOT NULL,

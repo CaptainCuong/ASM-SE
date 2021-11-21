@@ -54,10 +54,8 @@
                                 <tr>
                                     <th scope="col">Order time</th>
                                     <th scope="col">Table</th>
-                                    <th scope="col">Delivery address</th>
-                                    <th scope="col">Delivered</th>
-                                    <th scope="col">Canceled</th>
-                                    <th scope="col">Cancellation reason</th>
+                                    <th scope="col">Payment method</th>
+                                    <th scope="col">Paid</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -72,18 +70,11 @@
                                                 echo $order['table_id'];
                                             echo "</td>";
                                             echo "<td>";
-                                                echo $order['delivery_address'];
+                                                echo $order['payment_method'];
                                             echo "</td>";
                                             echo "<td>";
-                                                if($order['delivered'] == 1) echo "Yes";
+                                                if($order['paid'] == 1) echo "Yes";
                                                 else echo "No";
-                                            echo "</td>";
-                                            echo "<td>";
-                                                if($order['canceled'] == 1) echo "Yes";
-                                                else echo "No";
-                                            echo "</td>";
-                                            echo "<td>";
-                                                echo $order['cancellation_reason'];
                                             echo "</td>";
                                         echo "</tr>";
                                     }
