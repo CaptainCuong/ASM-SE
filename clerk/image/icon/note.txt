@@ -1,0 +1,8 @@
+<a href="#" onclick="openFunction()">
+	<object type="image/svg+xml" data="image/icon/wcloche.svg"></object>
+</a>
+
+<div class="slogan">
+	<h1>Restaurant</h1>
+	<p>What do you want to eat today ?</p>
+</div>	
