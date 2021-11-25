@@ -6,7 +6,7 @@
     <header class="headerMenu сlearfix sb-page-header">   
         <div class="nav-header">
             <a class="navbar-brand" href="">
-                Admin Panel
+                Clerk Panel
             </a> 
         </div>
 
@@ -79,18 +79,19 @@
 
                 <div class="dropdown-divider"></div>
 
-                <li>
+                <!-- <li>
                     <a href="menu_categories.php" class="a-verMenu menu_categories_link">
                         <i class="fas fa-list icon-ver"></i>
                         <span style="padding-left:6px;">Menu Categories</span>
                     </a>
-                </li>
-                <li>
+                </li> -->
+                <!-- <li>
                     <a href="menus.php" class="a-verMenu menus_link">
                         <i class="fas fa-utensils icon-ver"></i>
                         <span style="padding-left:6px;">Menus</span>
                     </a>
-                </li>
+                </li> -->
+    
                 <!--
                 <li>
                     <a href="gallery.php" class="a-verMenu gallery_link">
@@ -109,7 +110,7 @@
                 <div class="dropdown-divider"></div>
                 
                 <div class="sidenav-menu-heading">
-                    Staff
+                    Reservation
                 </div>
                 
                 <div class="dropdown-divider"></div>
@@ -124,16 +125,50 @@
                 <li>
                     <a href="users.php" class="a-verMenu users_link">
                         <i class="far fa-user icon-ver"></i>
-                        <span style="padding-left:6px;">Users</span>
+                        <span style="padding-left:6px;">Customer</span>
                     </a>
                 </li>
                 
+                <div class="sidenav-menu-heading">
+                    <button type="button" class="btn btn-primary btn-block chat_button" onclick="toggle_chat()">Chat space</button>
+                </div>
+
+                <div class="chat_list" style="display:none;">
+                    <li>
+                        <a href="users.php" class="a-verMenu users_link">
+                            <i class="fas fa-comment-dots"></i>
+                            <span style="padding-left:6px;">Table 1</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="users.php" class="a-verMenu users_link">
+                            <i class="fas fa-comment-dots"></i>
+                            <span style="padding-left:6px;">Table 2</span>
+                        </a>
+                    </li>
+                </div>
+                <!-- <li>
+                    <a href="users.php" class="a-verMenu users_link">
+                        <i class="far fa-user icon-ver"></i>
+                        <span style="padding-left:6px;"></span>
+                    </a>
+                </li> -->
 
                 <div class="dropdown-divider"></div>
 
             </ul>
         </div>
     </aside>
+
+    <script type="text/javascript">
+        function toggle_chat(){
+            var chat_list = document.querySelector(".chat_list");
+            if(chat_list.style.display === "none")
+                chat_list.style.display = "block";
+            else
+                chat_list.style.display = "none";
+        }
+    </script>
 
     <!-- START BODY CONTENT  -->
 

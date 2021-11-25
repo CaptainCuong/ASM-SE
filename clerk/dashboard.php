@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 -->
-                <div class="col-sm-6 col-lg-3">
+                <!-- <div class="col-sm-6 col-lg-3">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="row">
@@ -70,7 +70,7 @@
                                     <i class="fas fa-utensils fa-4x"></i>
                                 </div>
                                 <div class="col-sm-9 text-right">
-                                    <div class="huge"><span><?php echo countItems("menu_id","menus")?></span></div>
+                                    <div class="huge"><span><?php //echo countItems("menu_id","menus")?></span></div>
                                     <div>Total Menus</div>
                                 </div>
                             </div>
@@ -83,9 +83,9 @@
                             </div>
                         </a>
                     </div>
-                </div>
+                </div> -->
                 
-                <div class=" col-sm-6 col-lg-3">
+                <!-- <div class=" col-sm-6 col-lg-3">
                     <div class="panel panel-red">
                         <div class="panel-heading">
                             <div class="row">
@@ -106,9 +106,10 @@
                             </div>
                         </a>
                     </div>
-                </div>
+                </div> -->
+
                 <div class=" col-sm-6 col-lg-3">
-                    <div class="panel panel-yellow">
+                    <div class="panel panel-yellow" style = "width:81vw; position: relative;">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-sm-3">
@@ -649,5 +650,4 @@
             }
           });
     });
-
 </script>
